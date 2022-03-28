@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Basic Black T-Shirt",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting indus...",
+    "price": "1000",
+    "category": "boys",
+    "quantity": "2"
+  },
+  {
+    "name": "Basic Blue T-Shirt",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting indus...",
+    "price": "2000",
+    "category": "girls",
+    "quantity": "3"
+  }
+]
