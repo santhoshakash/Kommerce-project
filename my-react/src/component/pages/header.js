@@ -1,11 +1,15 @@
 import "../css/style.css";
+import { Badge } from "@material-ui/core";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 // import { Signup } from "./signup";
 import weblogo from "../images/wigo-logo-img.png";
 
 export function Header() {
   const [state, setstate] = useState();
+  const quantity = useSelector((state) => state.cart.quantity);
+  // console.log(quantity);
 
   return (
     <header class="header bg-white" id="header">
@@ -27,7 +31,7 @@ export function Header() {
               <nav class="navigation">
                 <ul>
                   <li>
-                    <a href="collections.html">Collections</a>
+                    <Link to="/products">Collection</Link>
                   </li>
                 </ul>
               </nav>
@@ -48,26 +52,27 @@ export function Header() {
                   </g>
                 </svg>
                 <div class="head-link bg-white">
-                  <a class="main-menu-link" href="login.html">
-                    Login
-                  </a>
+                  <Link to="/">Login</Link>
+
                   <Link to="/Signup">Register</Link>
                 </div>
               </span>
 
               <span class="cart-link">
-                <a href="cart.html">
-                  <svg width="24px" height="24px" viewBox="0 -2 37 35">
-                    <g
-                      transform="translate(0.500000, 0.500000)"
-                      stroke="none"
-                      fill="currentColor"
-                      fill-rule="nonzero"
-                    >
-                      <path d="M0.2,11 L9.5,29 L26.4,29 L35.7,11 L0.2,11 Z M24.5,26 L11.5,26 L4.8,14 L31.2,14 L24.5,26 L24.5,26 Z M18.5,3 C22.7,3 25.5,6.3 25.5,8.5 L28.5,8.5 C28.5,4.5 24.2,0 18.5,0 C12.8,0 8.5,4.5 8.5,8.5 L11.5,8.5 C11.5,6.3 14.3,3 18.5,3 Z"></path>
-                    </g>
-                  </svg>
-                </a>
+                <Link to="/cart">
+                  <Badge badgeContent={quantity} color="secondary">
+                    <svg width="24px" height="24px" viewBox="0 -2 37 35">
+                      <g
+                        transform="translate(0.500000, 0.500000)"
+                        stroke="none"
+                        fill="currentColor"
+                        fill-rule="nonzero"
+                      >
+                        <path d="M0.2,11 L9.5,29 L26.4,29 L35.7,11 L0.2,11 Z M24.5,26 L11.5,26 L4.8,14 L31.2,14 L24.5,26 L24.5,26 Z M18.5,3 C22.7,3 25.5,6.3 25.5,8.5 L28.5,8.5 C28.5,4.5 24.2,0 18.5,0 C12.8,0 8.5,4.5 8.5,8.5 L11.5,8.5 C11.5,6.3 14.3,3 18.5,3 Z"></path>
+                      </g>
+                    </svg>
+                  </Badge>
+                </Link>
               </span>
             </div>
           </div>
